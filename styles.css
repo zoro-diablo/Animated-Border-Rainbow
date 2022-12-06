@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Raleway:wght@100&display=swap');
+
+body{
+    background-color: rgb(13, 12, 12);
+}
+
+div{
+    height: 250px;
+    width:250px;
+    /* border: 3px solid white; */
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    border-radius: 5px;
+    transform: translate(-50%,-50%); 
+    overflow: hidden;
+    box-shadow: rgba(222, 212, 211, 0.4) 5px 5px, rgba(199, 181, 192, 0.3) 10px 10px, rgba(201, 191, 197, 0.2) 15px 15px, rgba(180, 165, 174, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+div::before{
+    content: "";
+    height: 150%;
+    width: 150%;
+    position: absolute;
+    left: -25%;
+    bottom: -25%;
+    background: conic-gradient(
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet,
+        orange,
+        red
+    );
+    animation:spin 3s infinite linear;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@keyframes spin{
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+div::after{
+    content: "BORDER";
+    position: absolute;
+    background-color: rgb(20, 19, 19);
+    color: white;
+    height: 230px;
+    width: 230px;
+    left: 3.9%;
+    top:3.9%;
+    letter-spacing: 10px;
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+div:hover{
+    animation-play-state: paused;
+}
